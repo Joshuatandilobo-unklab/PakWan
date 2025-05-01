@@ -37,4 +37,13 @@ const styles = StyleSheet.create({
     borderColor: '#ccc',
     borderStyle: 'dashed',
   },
+  photo: {
+    width: '100%',
+    height: '100%',
+  },
+  uploadText: {
+    marginTop: 8,
+    color: '#888',
+    fontSize: 16,
+  },
 });
