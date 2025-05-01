@@ -184,3 +184,29 @@ const ProfileSettings = ({navigation}) => {
 };
 
 export default ProfileSettings;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#E1EEBC',
+  },
+  scrollContainer: {
+    padding: 20,
+    paddingBottom: 100,
+    alignItems: 'center',
+  },
+  profileImage: {
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+    marginTop: 20,
+    marginBottom: 20,
+  },
+  form: {
+    width: '100%',
+    marginTop: 20,
+  },
+  inputGroup: {
+    marginBottom: 12,
+  },
+});
