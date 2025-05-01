@@ -13,7 +13,7 @@ import Button from '../../components/atoms/Button';
 import Gap from '../../components/atoms/Gap';
 import BackButton from '../../components/atoms/BackButton';
 import {launchImageLibrary} from 'react-native-image-picker';
-
+import {showMessage} from 'react-native-flash-message';
 const SignUp = () => {
   return (
     <View style={styles.pageContainer}>
