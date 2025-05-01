@@ -20,3 +20,21 @@ const ProfilePicture = ({photoUri, onPress}) => {
 };
 
 export default ProfilePicture;
+
+const styles = StyleSheet.create({
+  container: {
+    alignItems: 'center',
+    marginVertical: 35,
+  },
+  uploadButton: {
+    width: 120,
+    height: 120,
+    borderRadius: 60,
+    backgroundColor: '#f0f0f0',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 3,
+    borderColor: '#ccc',
+    borderStyle: 'dashed',
+  },
+});
