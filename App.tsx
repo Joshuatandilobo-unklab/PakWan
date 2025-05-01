@@ -6,7 +6,7 @@ import SplashScreen from './src/pages/SplashScreen';
 import SignUp from './src/pages/SignUp';
 import SignIn from './src/pages/SignIn';
 import Dashboard from './src/pages/Dashboard';
-import Product from './src/pages/Product';
+import Product from './src/pages/Product/Product';
 import Cart from './src/pages/Cart';
 import ProductDetail from './src/pages/ProductDetail';
 import ProfilePage from './src/pages/Profile';
