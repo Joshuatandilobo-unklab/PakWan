@@ -78,3 +78,63 @@ const CheckoutPage = ({navigation}) => {
 
     setModalVisible(true);
   };
+
+  const processCheckout = async () => {
+    const auth = getAuth();
+    const user = auth.currentUser;
+    const db = getDatabase();
+
+    if (!user) {
+      Alert.alert('User tidak ditemukan');
+      return;
+    }
+
+    try {
+      const checkoutRef = ref(db, 'success/');
+
+      const checkoutItems = [];
+      for (const item of cartItems) {
+        const productRef = ref(db, `products/${item.id}`);
+        const snapshot = await get(productRef);
+        let productName = item.name;
+
+        if (snapshot.exists()) {
+          const productData = snapshot.val();
+          productName = productData.name || productName;
+        }
+
+        checkoutItems.push({
+          id: item.id,
+          name: productName,
+          quantity: item.quantity,
+          price: item.price,
+        });
+
+        const stock = snapshot.val()?.stock || 0;
+        await update(ref(db, `products/${item.id}`), {
+          stock: stock - item.quantity,
+        });
+      }
+
+      const checkoutData = {
+        userId: user.uid,
+        name: userData.fullName,
+        address: userData.address,
+        paymentMethod: selectedPayment,
+        items: checkoutItems,
+        total: totalAmount,
+        timestamp: new Date().toISOString(),
+      };
+
+      await push(checkoutRef, checkoutData);
+
+      clearCart();
+      setModalVisible(false);
+      Alert.alert('Sukses', 'Checkout berhasil!');
+      navigation.navigate('PaymentSuccess');
+    } catch (error) {
+      console.error('Checkout error:', error);
+      Alert.alert('Gagal', 'Terjadi kesalahan saat checkout.');
+      navigation.navigate('PaymentFailed');
+    }
+  };
