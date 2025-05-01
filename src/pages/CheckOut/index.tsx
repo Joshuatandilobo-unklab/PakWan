@@ -148,3 +148,87 @@ const CheckoutPage = ({navigation}) => {
       navigation.navigate('PaymentFailed');
     }
   };
+
+  return (
+    <View style={styles.page}>
+      <View style={styles.headerContainer}>
+        <HeaderDashboard
+          name={userData.fullName}
+          email={userData.email}
+          photo={userData.photo}
+        />
+      </View>
+
+      <ScrollView contentContainerStyle={styles.scrollContent}>
+        <View style={styles.card}>
+          <Text style={styles.sectionTitle}>📍 Shipping Information</Text>
+          <Text style={styles.label}>Name:</Text>
+          <Text style={styles.value}>{userData.fullName}</Text>
+          <Text style={styles.label}>Address:</Text>
+          <Text style={styles.value}>{userData.address}</Text>
+        </View>
+
+        <View style={styles.card}>
+          <Text style={styles.sectionTitle}>💳 Payment Method</Text>
+          <View
+            style={[
+              styles.paymentBox,
+              selectedPayment === 'CASH' && styles.selectedPayment,
+            ]}
+            onTouchEnd={() =>
+              setSelectedPayment(prev => (prev === 'CASH' ? '' : 'CASH'))
+            }>
+            <Text style={styles.paymentText}>💵 CASH</Text>
+          </View>
+        </View>
+
+        <View style={styles.card}>
+          <Text style={styles.sectionTitle}>🧾 Order Summary</Text>
+          {cartItems.map((item, index) => (
+            <Text key={index} style={styles.value}>
+              {item.name} x{item.quantity} = Rp{' '}
+              {(item.price * item.quantity).toLocaleString('id-ID')}
+            </Text>
+          ))}
+          <Text style={[styles.value, {marginTop: 10, fontWeight: 'bold'}]}>
+            Total: Rp {totalAmount.toLocaleString('id-ID')}
+          </Text>
+        </View>
+
+        <Button
+          label="Confirm Checkout"
+          color="#328E6E"
+          textColor="#FFFFFF"
+          onPress={handleConfirmCheckout}
+        />
+      </ScrollView>
+
+      <Modal visible={modalVisible} transparent animationType="fade">
+        <View style={styles.modalBackground}>
+          <View style={styles.modalContainer}>
+            <Text style={styles.modalTitle}>
+              Masukkan 'Yes' untuk sukses, 'No' untuk gagal:
+            </Text>
+            <TextInput
+              style={styles.modalInput}
+              value={paymentInput}
+              onChangeText={setPaymentInput}
+              placeholder="Yes / No"
+            />
+            <Button
+              label="Submit"
+              color="#4CAF50"
+              textColor="#fff"
+              onPress={handleDummyPayment}
+              style={{width: '100%', marginTop: 15}}
+            />
+          </View>
+        </View>
+      </Modal>
+
+      <BottomNavigator navigation={navigation} />
+    </View>
+  );
+};
+
+export default CheckoutPage;
