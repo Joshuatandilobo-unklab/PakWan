@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, Image, StyleSheet} from 'react-native';
-import Buttom from '../../components/atoms/Buttom';
-import chek from '../../assets/index';
+import Buttom from '../../components/atoms/Button';
+import chek from '../../assets/Chek.jpg';
 
 const PaymentSuccess = ({navigation}: any) => {
   return (

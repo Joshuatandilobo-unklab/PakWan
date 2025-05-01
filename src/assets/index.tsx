@@ -1,3 +1,3 @@
-import chek from './Chek.png';
+import chek from './Chek.jpg';
 
 export {chek};
