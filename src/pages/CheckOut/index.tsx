@@ -11,8 +11,6 @@ import {
 import HeaderDashboard from '../../components/moleculs/HeaderDashboard';
 import BottomNavigator from '../../components/moleculs/BottomNavigator/BottomNavigator';
 import Button from '../../components/atoms/Button';
-import {getAuth} from 'firebase/auth';
-import {getDatabase, ref, get, push, update} from 'firebase/database';
 import {useCart} from '../../contexts/CartContext';
 
 const CheckoutPage = ({navigation}) => {
@@ -34,32 +32,13 @@ const CheckoutPage = ({navigation}) => {
   );
 
   useEffect(() => {
-    const fetchUserData = async () => {
-      try {
-        const auth = getAuth();
-        const user = auth.currentUser;
-
-        if (user) {
-          const db = getDatabase();
-          const userRef = ref(db, 'users/' + user.uid);
-          const snapshot = await get(userRef);
-
-          if (snapshot.exists()) {
-            const data = snapshot.val();
-            setUserData({
-              fullName: data.fullName || '',
-              email: data.email || '',
-              photo: data.photo || '',
-              address: data.address || 'No address available',
-            });
-          }
-        }
-      } catch (error) {
-        console.error('Error fetching user data:', error);
-      }
-    };
-
-    fetchUserData();
+    // Simulasi data user (tanpa Firebase)
+    setUserData({
+      fullName: 'Nama Pengguna',
+      email: 'user@example.com',
+      photo: '',
+      address: 'Jl. Contoh Alamat, Indonesia',
+    });
   }, []);
 
   const handleConfirmCheckout = () => {
@@ -80,53 +59,14 @@ const CheckoutPage = ({navigation}) => {
   };
 
   const processCheckout = async () => {
-    const auth = getAuth();
-    const user = auth.currentUser;
-    const db = getDatabase();
-
-    if (!user) {
-      Alert.alert('User tidak ditemukan');
-      return;
-    }
-
     try {
-      const checkoutRef = ref(db, 'success/');
-
-      const checkoutItems = [];
-      for (const item of cartItems) {
-        const productRef = ref(db, `products/${item.id}`);
-        const snapshot = await get(productRef);
-        let productName = item.name;
-
-        if (snapshot.exists()) {
-          const productData = snapshot.val();
-          productName = productData.name || productName;
-        }
-
-        checkoutItems.push({
-          id: item.id,
-          name: productName,
-          quantity: item.quantity,
-          price: item.price,
-        });
-
-        const stock = snapshot.val()?.stock || 0;
-        await update(ref(db, `products/${item.id}`), {
-          stock: stock - item.quantity,
-        });
-      }
-
-      const checkoutData = {
-        userId: user.uid,
-        name: userData.fullName,
-        address: userData.address,
-        paymentMethod: selectedPayment,
-        items: checkoutItems,
+      // Simulasi penyimpanan data checkout
+      console.log('Checkout success with data: ', {
+        userData,
+        selectedPayment,
+        cartItems,
         total: totalAmount,
-        timestamp: new Date().toISOString(),
-      };
-
-      await push(checkoutRef, checkoutData);
+      });
 
       clearCart();
       setModalVisible(false);
@@ -233,6 +173,7 @@ const CheckoutPage = ({navigation}) => {
 
 export default CheckoutPage;
 
+// Styles remain unchanged...
 const styles = StyleSheet.create({
   page: {
     flex: 1,
