@@ -18,3 +18,5 @@ const ProfilePicture = ({photoUri, onPress}) => {
     </View>
   );
 };
+
+export default ProfilePicture;
