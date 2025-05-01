@@ -150,4 +150,31 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     alignItems: 'center',
   },
+  removeButtonText: {
+    fontFamily: 'Inder-Regular',
+    color: '#fff',
+    fontWeight: 'bold',
+  },
+  checkoutSection: {
+    paddingHorizontal: 20,
+    marginBottom: 10,
+  },
+  totalContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 10,
+    alignItems: 'center',
+  },
+  totalLabel: {
+    fontFamily: 'Inder-Regular',
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#333',
+  },
+  totalPrice: {
+    fontFamily: 'Inder-Regular',
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#328E6E',
+  },
 });
