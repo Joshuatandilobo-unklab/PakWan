@@ -15,3 +15,17 @@ const ProfileHeader = ({name, photo}) => {
 };
 
 export default ProfileHeader;
+
+const styles = StyleSheet.create({
+  header: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 20,
+  },
+  profileImage: {
+    width: 200,
+    height: 200,
+    borderRadius: 200,
+    backgroundColor: '#ddd',
+  },
+});
