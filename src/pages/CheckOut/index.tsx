@@ -232,3 +232,37 @@ const CheckoutPage = ({navigation}) => {
 };
 
 export default CheckoutPage;
+
+const styles = StyleSheet.create({
+  page: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+  headerContainer: {
+    backgroundColor: '#DFF2B2',
+    paddingTop: 30,
+    paddingBottom: 10,
+  },
+  scrollContent: {
+    padding: 20,
+  },
+  card: {
+    backgroundColor: '#f0f0f0',
+    padding: 15,
+    borderRadius: 10,
+    marginBottom: 20,
+  },
+  sectionTitle: {
+    fontFamily: 'Inder-Regular',
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginBottom: 10,
+    color: '#328E6E',
+  },
+  label: {
+    fontFamily: 'Inder-Regular',
+    fontSize: 14,
+    color: '#555',
+    marginTop: 5,
+  },
+});
