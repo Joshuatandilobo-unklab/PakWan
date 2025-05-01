@@ -138,3 +138,13 @@ const CheckoutPage = ({navigation}) => {
       navigation.navigate('PaymentFailed');
     }
   };
+
+  const handleDummyPayment = () => {
+    if (paymentInput.trim().toLowerCase() === 'yes') {
+      processCheckout();
+    } else {
+      Alert.alert('Pembayaran gagal', 'Silakan coba lagi.');
+      setModalVisible(false);
+      navigation.navigate('PaymentFailed');
+    }
+  };
