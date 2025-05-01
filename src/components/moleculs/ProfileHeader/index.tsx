@@ -28,4 +28,17 @@ const styles = StyleSheet.create({
     borderRadius: 200,
     backgroundColor: '#ddd',
   },
+  placeholderImage: {
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+    backgroundColor: '#ccc',
+  },
+  name: {
+    fontFamily: 'Inder-Regular',
+    marginTop: 10,
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#333',
+  },
 });
