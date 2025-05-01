@@ -11,6 +11,8 @@ import Cart from './src/pages/Cart';
 import ProductDetail from './src/pages/ProductDetail';
 import ProfilePage from './src/pages/Profile';
 import ProfileSettings from './src/pages/ProfileSettings';
+import {CartProvider} from './src/contexts/CartContext';
+import {ProductProvider} from './src/contexts/ProductContext';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
