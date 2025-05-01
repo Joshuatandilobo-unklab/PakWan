@@ -22,3 +22,34 @@ const HeaderDashboard = ({name, email, welcome, photo}) => {
 };
 
 export default HeaderDashboard;
+
+const styles = StyleSheet.create({
+  header: {
+    padding: 20,
+  },
+  userInfo: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  profileImage: {
+    width: 70,
+    height: 70,
+    borderRadius: 50,
+    backgroundColor: '#ccc',
+  },
+  name: {
+    fontFamily: 'Inder-Regular',
+    fontSize: 25,
+  },
+  email: {
+    fontFamily: 'Inder-Regular',
+    fontSize: 20,
+    color: '#777',
+  },
+  welcome: {
+    fontFamily: 'Inder-Regular',
+    marginTop: 10,
+    fontSize: 20,
+    color: '#519259',
+  },
+});
