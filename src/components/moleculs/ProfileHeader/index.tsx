@@ -13,3 +13,5 @@ const ProfileHeader = ({name, photo}) => {
     </View>
   );
 };
+
+export default ProfileHeader;
