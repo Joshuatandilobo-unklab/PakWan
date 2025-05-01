@@ -5,6 +5,8 @@ import TextInput from '../../components/moleculs/TextInput';
 import Button from '../../components/atoms/Button';
 import Gap from '../../components/atoms/Gap';
 import BackButton from '../../components/atoms/BackButton';
+import {getAuth, signInWithEmailAndPassword} from 'firebase/auth';
+import {showMessage} from 'react-native-flash-message';
 
 const SignIn = ({navigation}) => {
   const [email, setEmail] = useState('');
