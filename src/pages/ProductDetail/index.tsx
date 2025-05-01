@@ -78,3 +78,80 @@ const ProductDetail = ({navigation}) => {
 };
 
 export default ProductDetail;
+
+const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: '#E1EEBC',
+  },
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    padding: 20,
+    paddingBottom: 0,
+  },
+  centered: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#E1EEBC',
+  },
+  productImage: {
+    width: 200,
+    height: 200,
+    marginTop: 20,
+    resizeMode: 'contain',
+    borderRadius: 10,
+  },
+  infoContainer: {
+    width: '100%',
+    backgroundColor: '#E1EEBC',
+    marginTop: 20,
+    alignItems: 'center',
+    padding: 10,
+    borderRadius: 10,
+  },
+  productName: {
+    fontFamily: 'Inder-Regular',
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#4CAF50',
+    marginBottom: 10,
+  },
+  priceText: {
+    fontFamily: 'Inder-Regular',
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#000',
+    marginBottom: 10,
+  },
+  descriptionTitle: {
+    fontFamily: 'Inder-Regular',
+    fontSize: 14,
+    fontWeight: 'bold',
+    color: '#666',
+    alignSelf: 'flex-start',
+    marginLeft: 10,
+  },
+  productDescription: {
+    fontFamily: 'Inder-Regular',
+    fontSize: 14,
+    color: '#555',
+    marginBottom: 10,
+    alignSelf: 'flex-start',
+    marginLeft: 10,
+  },
+  stockText: {
+    fontFamily: 'Inder-Regular',
+    fontSize: 14,
+    color: '#4CAF50',
+    marginBottom: 15,
+    alignSelf: 'flex-start',
+    marginLeft: 10,
+  },
+  bottomNav: {
+    width: '100%',
+    position: 'absolute',
+    bottom: 0,
+  },
+});
