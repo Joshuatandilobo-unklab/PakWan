@@ -162,3 +162,30 @@ const ProfilePage = ({navigation}) => {
 };
 
 export default ProfilePage;
+
+const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: '#E1EEBC',
+  },
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    padding: 20,
+  },
+  input: {
+    width: 350,
+    height: 50,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 10,
+    paddingHorizontal: 15,
+    marginBottom: 15,
+    backgroundColor: '#fff',
+  },
+  bottomNav: {
+    position: 'absolute',
+    bottom: 0,
+    width: '100%',
+  },
+});
