@@ -12,3 +12,12 @@ const ProfileInfo = ({email, phone, address}) => {
 };
 
 export default ProfileInfo;
+
+const styles = StyleSheet.create({
+  infoContainer: {
+    width: '100%',
+    paddingHorizontal: 20,
+    marginTop: 15,
+    marginBottom: 20,
+  },
+});
