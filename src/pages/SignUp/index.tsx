@@ -12,6 +12,7 @@ import TextInput from '../../components/moleculs/TextInput';
 import Button from '../../components/atoms/Button';
 import Gap from '../../components/atoms/Gap';
 import BackButton from '../../components/atoms/BackButton';
+import {launchImageLibrary} from 'react-native-image-picker';
 
 const SignUp = () => {
   return (
