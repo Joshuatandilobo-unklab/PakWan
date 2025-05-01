@@ -13,3 +13,15 @@ const MenuItem = ({icon, title, onPress}) => {
 };
 
 export default MenuItem;
+
+const styles = StyleSheet.create({
+  container: {
+    alignItems: 'center',
+  },
+  label: {
+    fontFamily: 'Inder-Regular',
+    marginTop: 8,
+    fontSize: 25,
+    color: '#000',
+  },
+});
