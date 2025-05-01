@@ -55,4 +55,58 @@ const CartPage = ({navigation}) => {
     0,
   );
 
-  
+  return (
+    <View style={styles.page}>
+      <View style={styles.userInfoContainer}>
+        <HeaderDashboard
+          name={userData.fullName}
+          email={userData.email}
+          photo={userData.photo}
+        />
+      </View>
+
+      <ScrollView style={styles.cartList}>
+        {cartItems.length === 0 ? (
+          <Text style={styles.emptyText}>Your cart is empty.</Text>
+        ) : (
+          cartItems.map((item, index) => (
+            <View key={index} style={styles.cartItemContainer}>
+              <CartItem
+                id={item.id}
+                image={item.image}
+                name={item.name}
+                price={item.price}
+                quantity={item.quantity}
+              />
+              <TouchableOpacity
+                style={styles.removeButton}
+                onPress={() => removeFromCart(item.id)}>
+                <Text style={styles.removeButtonText}>Remove</Text>
+              </TouchableOpacity>
+            </View>
+          ))
+        )}
+      </ScrollView>
+
+      <View style={styles.checkoutSection}>
+        <View style={styles.totalContainer}>
+          <Text style={styles.totalLabel}>Total:</Text>
+          <Text style={styles.totalPrice}>
+            Rp {totalPrice.toLocaleString('id-ID')}
+          </Text>
+        </View>
+
+        <Button
+          label="Checkout"
+          color="#328E6E"
+          textColor="#FFFFFF"
+          onPress={() => {
+            navigation.navigate('Checkout');
+          }}
+        />
+      </View>
+
+      <BottomNavigator navigation={navigation} />
+    </View>
+  );
+};
