@@ -112,3 +112,42 @@ const CartPage = ({navigation}) => {
 };
 
 export default CartPage;
+
+const styles = StyleSheet.create({
+  page: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+  userInfoContainer: {
+    backgroundColor: '#DFF2B2',
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingTop: 30,
+    paddingBottom: 10,
+  },
+  cartList: {
+    flex: 1,
+    paddingVertical: 20,
+    paddingHorizontal: 10,
+  },
+  emptyText: {
+    fontFamily: 'Inder-Regular',
+    textAlign: 'center',
+    marginTop: 20,
+    fontSize: 16,
+    color: '#888',
+  },
+  cartItemContainer: {
+    backgroundColor: '#f0f0f0',
+    marginBottom: 15,
+    padding: 10,
+    borderRadius: 10,
+  },
+  removeButton: {
+    backgroundColor: '#ff5c5c',
+    marginTop: 10,
+    paddingVertical: 8,
+    borderRadius: 8,
+    alignItems: 'center',
+  },
+});
