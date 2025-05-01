@@ -110,3 +110,5 @@ const CartPage = ({navigation}) => {
     </View>
   );
 };
+
+export default CartPage;
