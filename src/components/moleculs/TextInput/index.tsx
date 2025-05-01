@@ -51,7 +51,7 @@ export default TextInput;
 
 const styles = StyleSheet.create({
   label: {
-    fontFamily: 'Inder',
+    fontFamily: 'Inder-Regular',
     fontSize: 24,
     marginBottom: 6,
     color: '#67AE6E',
