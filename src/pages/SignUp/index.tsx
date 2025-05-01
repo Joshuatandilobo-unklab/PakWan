@@ -24,3 +24,21 @@ const SignUp = ({navigation}) => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
   
+ const onSubmit = () => {
+        if (!email) {
+          showMessage({message: 'Email must not be empty', type: 'danger'});
+          return;
+        }
+    
+        if (!password) {
+          showMessage({message: 'Password must not be empty', type: 'danger'});
+          return;
+        }
+    
+        if (password !== confirmPassword) {
+          showMessage({
+            message: 'Password and Confirm Password do not match',
+            type: 'danger',
+          });
+          return;
+        }
