@@ -76,3 +76,24 @@ const SignIn = ({navigation}) => {
 };
 
 export default SignIn;
+
+const styles = StyleSheet.create({
+  pageContainer: {
+    flex: 1,
+    backgroundColor: '#E1EEBC',
+  },
+  contentContainer: {
+    borderRadius: 10,
+    margin: 20,
+    paddingTop: 50,
+  },
+  textAccount: {
+    marginTop: 20,
+    color: '#67AE6E',
+    fontSize: 20,
+    textAlign: 'center',
+  },
+  Header: {
+    paddingTop: 40,
+  },
+});
