@@ -17,14 +17,14 @@ const PaymentFailed = ({navigation}: any) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#edf2c5',
+    backgroundColor: '#E1EEBC',
     alignItems: 'center',
     justifyContent: 'center',
     padding: 20,
   },
   title: {
     fontSize: 24,
-    color: '#4a7856',
+    color: '#328E6E',
     fontWeight: '600',
     marginVertical: 4,
   },
