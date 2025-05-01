@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     marginTop: 40,
   },
   title: {
-    fontFamily: 'Inder',
+    fontFamily: 'Inder-Regular',
     fontSize: 40,
     color: '#5E9B6F',
   },
