@@ -24,7 +24,7 @@ const SignUp = ({navigation}) => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
   
- const onSubmit = () => {
+     const onSubmit = () => {
         if (!email) {
           showMessage({message: 'Email must not be empty', type: 'danger'});
           return;
@@ -40,5 +40,11 @@ const SignUp = ({navigation}) => {
             message: 'Password and Confirm Password do not match',
             type: 'danger',
           });
+          return;
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          showMessage({message: 'Invalid email format', type: 'danger'});
           return;
         }
