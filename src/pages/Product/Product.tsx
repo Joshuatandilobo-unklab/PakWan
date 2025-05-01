@@ -62,3 +62,40 @@ const Product = ({navigation}) => {
 };
 
 export default Product;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#E1EEBC',
+  },
+  searchContainer: {
+    backgroundColor: '#E1EEBC',
+    flexDirection: 'row',
+    alignItems: 'center',
+    margin: 10,
+    borderRadius: 10,
+    paddingHorizontal: 10,
+    height: 40,
+    borderWidth: 1,
+    borderColor: '#ccc',
+  },
+  searchInput: {
+    fontFamily: 'Inder-Regular',
+    flex: 1,
+    fontSize: 16,
+  },
+  productList: {
+    paddingHorizontal: 10,
+    paddingBottom: 60,
+  },
+  productItem: {
+    flex: 1,
+    margin: 5,
+    maxWidth: '48%',
+  },
+  empty: {
+    flex: 1,
+    alignItems: 'center',
+    marginTop: 20,
+  },
+});
