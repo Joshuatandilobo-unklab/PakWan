@@ -20,4 +20,10 @@ const styles = StyleSheet.create({
     marginTop: 15,
     marginBottom: 20,
   },
+  infoText: {
+    fontFamily: 'Inder-Regular',
+    fontSize: 15,
+    color: '#333',
+    marginBottom: 10,
+  },
 });
