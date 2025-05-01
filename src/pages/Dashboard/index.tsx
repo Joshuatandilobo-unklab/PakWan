@@ -96,3 +96,36 @@ const Dashboard = ({navigation}) => {
 };
 
 export default Dashboard;
+
+const styles = StyleSheet.create({
+  page: {
+    flex: 1,
+    backgroundColor: '#E1EEBC',
+  },
+  container: {
+    backgroundColor: '#FFFFFF',
+    paddingBottom: 350,
+  },
+  menuContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginVertical: 20,
+  },
+  sectionTitle: {
+    fontFamily: 'Inder-Regular',
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#519259',
+    marginHorizontal: 20,
+    marginVertical: 10,
+  },
+  productContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    paddingHorizontal: 20,
+    flexWrap: 'wrap',
+  },
+  productItem: {
+    marginBottom: 20,
+  },
+});
