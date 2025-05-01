@@ -1,18 +1,26 @@
 import React from 'react';
 import {View, Text, Image, StyleSheet} from 'react-native';
-import Buttom from '../../components/atoms/Button';
-import chek from '../../assets/Failed.png';
+import Button from '../../components/atoms/Button';
+import {Failed} from '../../assets/index';
 
 const PaymentFailed = ({navigation}: any) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Payment</Text>
       <Text style={styles.title}>Failed</Text>
-      <Image source={chek} style={styles.image} />
-      <Buttom title="Back" onPress={() => navigation.goBack()} />
+      <Image source={Failed} style={styles.image} />
+      <Button
+        label="Got It"
+        color="#328E6E"
+        textColor="#FFFFFF"
+        onPress={() => navigation.navigate('Dashboard')}
+        style={{width: '100%', marginTop: 15}}
+      />
     </View>
   );
 };
+
+export default PaymentFailed;
 
 const styles = StyleSheet.create({
   container: {
@@ -35,5 +43,3 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
   },
 });
-
-export default PaymentFailed;
