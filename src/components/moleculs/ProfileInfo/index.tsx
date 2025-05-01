@@ -10,3 +10,5 @@ const ProfileInfo = ({email, phone, address}) => {
     </View>
   );
 };
+
+export default ProfileInfo;
